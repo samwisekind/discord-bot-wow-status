@@ -1,6 +1,3 @@
-/* eslint-disable import/named */
-// @ts-nocheck
-
 import { handler } from './index';
 import postDiscordChannelMessage from './discord';
 

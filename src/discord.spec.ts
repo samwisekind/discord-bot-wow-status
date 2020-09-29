@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import fetchMock from 'fetch-mock';
 
 import postDiscordChannelMessage from './discord';

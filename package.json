@@ -33,6 +33,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.14",
     "@types/node-fetch": "^2.5.7",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "eslint": "^7.10.0",
@@ -55,6 +56,9 @@
     },
     "env": {
       "jest": true
+    },
+    "rules": {
+      "import/prefer-default-export": 0
     }
   },
   "babel": {

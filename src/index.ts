@@ -15,9 +15,9 @@ process.env.TZ = 'UTC';
  * @param {Object} callback Lambda callback function
  * @param {Number} day Current day (as Date number)
  */
-exports.handler = async (
-  data: { type: String },
-  _context: Object,
+const handler = async (
+  data: { type: String } | null,
+  _context: Object | null,
   callback: Function,
   day: Number = new Date().getDay(),
 ) => {
@@ -32,3 +32,7 @@ exports.handler = async (
 
   return callback(null);
 };
+
+exports.handler = handler;
+
+export { handler };
