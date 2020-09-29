@@ -1,0 +1,78 @@
+{
+  "name": "discord-bot-wow-status",
+  "version": "0.0.0",
+  "description": "AWS Lambda for a Discord Bot",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test:eslint": "eslint src/",
+    "test:typescript": "tsc --noEmit",
+    "test:typescript:watch": "tsc -- --watch",
+    "test:unit": "jest .*.spec.ts",
+    "test:unit:watch": "npm run test:unit -- --watch",
+    "test:unit:coverage": "npm run test:unit -- --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flamov/discord-bot-wow-status.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "lambda"
+  ],
+  "author": "Flamov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Flamov/discord-bot-wow-status/issues"
+  },
+  "homepage": "https://github.com/Flamov/discord-bot-wow-status#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@typescript-eslint/eslint-plugin": "^4.3.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-typescript": "^11.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.4.2",
+    "typescript": "^4.0.3"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "airbnb-typescript/base"
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "env": {
+      "jest": true
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "@babel/preset-typescript"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "dist/"
+    ]
+  }
+}

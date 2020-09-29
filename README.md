@@ -1,2 +1,3 @@
 # discord-bot-wow-status
-AWS Lambda for a Discord Bot
+
+AWS Lambda for a Discord Bot.
