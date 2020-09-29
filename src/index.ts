@@ -3,7 +3,7 @@ import postDiscordChannelMessage from './discord';
 import {
   RESET_EVENT,
   RESET_MESSAGES,
-  RESET_DAY,
+  RESET_WEEKLY_DAY,
 } from './constants';
 
 process.env.TZ = 'UTC';
@@ -23,7 +23,7 @@ exports.handler = async (
 ) => {
   if (data?.type === RESET_EVENT) {
     let message = RESET_MESSAGES.DAILY;
-    if (day === RESET_DAY) {
+    if (day === RESET_WEEKLY_DAY) {
       message = RESET_MESSAGES.WEEKLY;
     }
 

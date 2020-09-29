@@ -9,12 +9,12 @@ const RESET_MESSAGES = {
   WEEKLY: ':tada: Daily quests and raids have been reset',
 };
 
-const RESET_DAY = 2; // Tuesday
+const RESET_WEEKLY_DAY = 2; // Tuesday
 
 export {
   DISCORD_CHANNEL_API,
   DISCORD_AUTHORIZATION_HEADER,
   RESET_EVENT,
   RESET_MESSAGES,
-  RESET_DAY,
+  RESET_WEEKLY_DAY,
 };
