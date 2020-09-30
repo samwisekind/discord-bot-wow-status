@@ -1,3 +1,3 @@
 # discord-bot-wow-status
 
-Node server for a Discord bot.
+Node server for a Discord Bot.
