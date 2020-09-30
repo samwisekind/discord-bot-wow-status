@@ -1,13 +1,9 @@
 node_modules
 npm-debug.log
 
-.cache
 .nyc_output
-
-.env
-
-reports
 coverage
 .github
 .gitignore
-README.node_modules
+LICENSE
+README
