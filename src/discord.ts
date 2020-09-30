@@ -5,15 +5,15 @@ import {
 
 /* istanbul ignore next */
 const {
-  DISCORD_CHANNEL_ID = 'test_discord_channel',
   DISCORD_BOT_TOKEN = 'test_discord_bot_token',
+  DISCORD_CHANNEL_ID = 'test_discord_channel',
 } = process.env;
 
 /* global fetch */
 global.fetch = require('node-fetch');
 
-const URI = DISCORD_CHANNEL_API.replace('{CHANNEL_ID}', DISCORD_CHANNEL_ID);
 const token = DISCORD_AUTHORIZATION_HEADER.replace('{TOKEN}', DISCORD_BOT_TOKEN);
+const URI = DISCORD_CHANNEL_API.replace('{CHANNEL_ID}', DISCORD_CHANNEL_ID);
 
 const postDiscordChannelMessage = async (
   message: String,

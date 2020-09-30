@@ -3,9 +3,9 @@
 Node server for a Discord Bot.
 
 ```console
-docker build . -t discord-bot-wow-status --build-arg DISCORD_BOT_TOKEN= --build-arg DISCORD_BOT_TOKEN=
+docker build . -t discord-bot-wow-status
 ```
 
 ```console
-docker run discord-bot-wow-status
+docker run -e DISCORD_BOT_TOKEN= -e DISCORD_CHANNEL_ID= -d discord-bot-wow-status
 ```
