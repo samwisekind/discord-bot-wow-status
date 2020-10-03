@@ -23,6 +23,6 @@ cron.schedule('*/5 * * * *', () => {
   try {
     postRealmStatus(String(process.env.REALM_SLUG));
   } catch (error) {
-    console.error('Unable to post realm status', error);
+    console.error('Unable to post realm status message', error);
   }
 });
