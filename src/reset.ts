@@ -23,7 +23,7 @@ const postResetMessage = (
     message = RESET_MESSAGES.WEEKLY;
   }
 
-  return postDiscordChannelMessage(message);
+  postDiscordChannelMessage(message);
 };
 
 export default postResetMessage;

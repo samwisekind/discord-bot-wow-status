@@ -22,6 +22,6 @@ describe('reset', () => {
     await postResetMessage(2);
 
     expect(postDiscordChannelMessage).toHaveBeenCalledTimes(1);
-    expect(postDiscordChannelMessage).toHaveBeenNthCalledWith(1, ':tada: Daily quests and raids have been reset');
+    expect(postDiscordChannelMessage).toHaveBeenNthCalledWith(1, ':tada: Daily quests and raids have reset');
   });
 });
