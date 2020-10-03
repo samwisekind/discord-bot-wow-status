@@ -4,7 +4,7 @@ const DISCORD_AUTHORIZATION_HEADER = 'Bot {TOKEN}';
 
 const RESET_MESSAGES = {
   DAILY: ':tada: Daily quests have reset',
-  WEEKLY: ':tada: Daily quests and raids have been reset',
+  WEEKLY: ':tada: Daily quests and raids have reset',
 };
 
 const RESET_WEEKLY_DAY = 2; // Tuesday
