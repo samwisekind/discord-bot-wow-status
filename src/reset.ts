@@ -13,7 +13,7 @@ const postResetMessage = (
   /* istanbul ignore next */
   day: Number = new Date().getDay(),
 ) => {
-  /* istanbul ignore next */
+  /* istanbul ignore if */
   if (process.env.NODE_ENV !== 'test') {
     console.log('Posting reset message to Discord');
   }

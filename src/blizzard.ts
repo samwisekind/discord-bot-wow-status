@@ -3,8 +3,8 @@ import {
 } from './constants';
 
 const {
-  BLIZZARD_CLIENT_ID = 'test_blizzard_client_id',
-  BLIZZARD_CLIENT_SECRET = 'test_blizzard_client_secret',
+  BLIZZARD_CLIENT_ID,
+  BLIZZARD_CLIENT_SECRET,
 } = process.env;
 
 /**
