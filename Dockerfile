@@ -7,6 +7,6 @@ RUN npm ci --unsafe-perm \
 
 # Clean build and run app
 FROM build
-RUN rm -rf ./tsconfig.json ./tsconfig.build.json ./src
+RUN rm -rf ./tsconfig.json ./tsconfig.build.json ./src ./github
 RUN npm prune --production
 CMD ["npm", "start"]
