@@ -12,6 +12,8 @@
 
 ## Introduction
 
+![Image of the Discord bot messages](https://cdn.flamov.com/misc/discord-bot-wow-status-preview.png?v1)
+
 This repository contains the source files of a Node server written in TypeScript for a Discord bot that automatically posts messages related to _World of Warcraft_. The bot is mostly for private use but it can be installed and used on any Discord server, however it must be hosted manually.
 
 Features of the bot include:
