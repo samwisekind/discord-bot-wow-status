@@ -10,7 +10,7 @@ import {
 let lastRealmStatus: string | null = null;
 
 /**
- * Handler for posting realm status message to Discord
+ * Handler for posting a realm status message to Discord
  * @param slug Slug of the realm to check the status of
  */
 const postRealmStatus = async (

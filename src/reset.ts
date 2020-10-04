@@ -6,7 +6,7 @@ import {
 } from './constants';
 
 /**
- * Handler for posting reset message to Discord
+ * Handler for posting a reset message to Discord
  * @param day Current day (as Date number)
  */
 const postResetMessage = (
