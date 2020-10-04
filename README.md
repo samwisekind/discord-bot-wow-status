@@ -74,7 +74,7 @@ Once the server is running, it will post messages to a single Discord channel (`
   * The server will poll the _World of Warcraft_ API every 5 minutes
   * The server will only post a message when the realm status changes from its previous state (i.e. it won't post a message for the same status multiple times)
 * Daily quests and weekly raids reset
-  * The server will post a message at a fixed schedule of 1500 UTC daily (based on the US reset time)
+  * The server will post a message every day when daily quests reset and a message on Tuesday when weekly raids reset, both at a fixed time of 1500 UTC (based on the US reset time)
 
 ## Development
 
