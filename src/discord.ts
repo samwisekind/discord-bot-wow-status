@@ -9,9 +9,6 @@ const {
   DISCORD_CHANNEL_ID = 'test_discord_channel',
 } = process.env;
 
-/* global fetch */
-global.fetch = require('node-fetch');
-
 const token = DISCORD_AUTHORIZATION_HEADER.replace('{TOKEN}', DISCORD_BOT_TOKEN);
 const URI = DISCORD_CHANNEL_API.replace('{CHANNEL_ID}', DISCORD_CHANNEL_ID);
 

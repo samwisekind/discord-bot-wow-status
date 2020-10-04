@@ -58,7 +58,11 @@
       "project": "./tsconfig.json"
     },
     "env": {
+      "node": true,
       "jest": true
+    },
+    "globals": {
+      "fetch": true
     },
     "rules": {
       "import/prefer-default-export": 0,
