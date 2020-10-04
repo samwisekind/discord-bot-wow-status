@@ -10,9 +10,9 @@
 
 ## Introduction
 
-This repository contains the source files for a Node server written in Typescript for a Discord Bot that automatically posts _World of Warcraft_ related messages. The bot is mostly for private use but it can be installed and used on any Discord server, however it must be hosted manually.
+This repository contains the source files of a Node server written in Typescript for a Discord Bot that automatically posts messages related to _World of Warcraft_. The bot is mostly for private use but it can be installed and used on any Discord server, however it must be hosted manually.
 
-Features include:
+Features of the bot include:
 
 * Monitors a realm and posts messages when the status of the realm changes (i.e. when the realm goes down or comes back up, useful for weekly maintenance)
 * Posts a message when daily quests and weekly raids reset (based on US reset time)
@@ -26,12 +26,12 @@ The following is required before installing and using the bot:
 * [A Discord app bot](https://discord.com/developers/applications)
 * [A Blizzard API client](https://develop.battle.net/accesss)
 
-The Discord app bot must be manually connected to a Discord gateway: https://discord.com/developers/docs/topics/gateway#get-gateway-bot
+The Discord app bot must be manually connected to a Discord gateway and server: https://discord.com/developers/docs/topics/gateway#get-gateway-bot
 
 The following environment variables are required when running the server:
 
 | Variable | Description |
-| --- | --- | --- |
+| --- | --- |
 | ```DISCORD_BOT_TOKEN``` | The token of the Bot from the [Discord app](https://discord.com/developers/applications) |
 | ```DISCORD_CHANNEL_ID``` | The ID of the Discord channel to post to |
 | ```BLIZZARD_CLIENT_ID``` | The client ID of the [Blizzard API client](https://develop.battle.net/access) |
