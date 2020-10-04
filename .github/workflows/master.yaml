@@ -1,0 +1,32 @@
+name: Master
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 0 * * *" # Every day at 0000 UTC (midnight)
+
+jobs:
+  master:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Use Node.js 14
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Install dependencies
+      run: npm ci --unsafe-perm
+    - name: Test ESLint
+      run: npm run test:eslint
+    - name: Test TypeScript files
+      run: npm run test:typescript
+    - name: Run unit tests and upload coverage
+      uses: paambaati/codeclimate-action@v2.6.0
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE_TEST_REPORTER_ID }}
+      with:
+        coverageCommand: npm run test:unit:coverage
+        coverageLocations: ${{github.workspace}}/coverage/lcov.info:lcov

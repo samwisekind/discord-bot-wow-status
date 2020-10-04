@@ -1,26 +1,29 @@
 {
   "name": "discord-bot-wow-status",
   "version": "0.0.0",
-  "description": "Node server for a Discord Bot",
+  "description": "Node/Typescript server for a Discord bot relating to World of Warcraft",
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index",
     "build": "tsc --build tsconfig.build.json",
+    "test": "npm run test:eslint && npm run test:typescript && npm run test:unit",
     "test:eslint": "eslint src/",
     "test:typescript": "tsc",
     "test:typescript:watch": "tsc --watch",
     "test:unit": "jest .*.spec.ts",
-    "test:unit:watch": "npm run test:unit -- --watch",
-    "test:unit:coverage": "npm run test:unit -- --coverage"
+    "test:unit:coverage": "npm run test:unit -- --coverage",
+    "test:unit:watch": "npm run test:unit:coverage -- --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Flamov/discord-bot-wow-status.git"
   },
   "keywords": [
+    "node",
+    "typescript",
     "discord",
     "bot",
-    "node"
+    "world-of-warcraft"
   ],
   "author": "Flamov",
   "license": "MIT",
@@ -65,7 +68,6 @@
       "fetch": true
     },
     "rules": {
-      "import/prefer-default-export": 0,
       "no-console": 0
     }
   },
@@ -88,8 +90,7 @@
       "src/**/*.ts"
     ],
     "coveragePathIgnorePatterns": [
-      "node_modules",
-      "dist/"
+      "node_modules"
     ]
   }
 }
