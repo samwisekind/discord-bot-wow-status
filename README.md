@@ -24,12 +24,14 @@ More features will be added when the APIs relating to features being introduced 
 
 The following is required before installing and using the bot:
 
-* [A Discord app bot](https://discord.com/developers/applications)
-* [A Blizzard API client](https://develop.battle.net/accesss)
+* [Discord app bot](https://discord.com/developers/applications)
+* [Blizzard API client](https://develop.battle.net/accesss)
 
 For both the Discord app and Blizzard API client, redirect and service URLs are not required.
 
-The Discord app bot must be manually connected to a Discord gateway and server: https://discord.com/developers/docs/topics/gateway#get-gateway-bot
+The Discord app bot must be manually connected to a Discord gateway and server:
+
+https://discord.com/developers/docs/topics/gateway#get-gateway-bot
 
 The following environment variables are required when running the server:
 
