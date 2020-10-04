@@ -11,7 +11,7 @@
 
 ## Introduction
 
-This repository contains the source files of a Node server written in Typescript for a Discord bot that automatically posts messages related to _World of Warcraft_. The bot is mostly for private use but it can be installed and used on any Discord server, however it must be hosted manually.
+This repository contains the source files of a Node server written in TypeScript for a Discord bot that automatically posts messages related to _World of Warcraft_. The bot is mostly for private use but it can be installed and used on any Discord server, however it must be hosted manually.
 
 Features of the bot include:
 
@@ -70,10 +70,10 @@ Below are the NPM commands that can be used for development:
 | Command | Description |
 | --- | --- |
 | ```npm run start``` | Runs the server |
-| ```npm run build``` | Compiles Typescript files into JavaScript |
-| ```npm run test``` | Runs Typescript, ESLint, and unit/integration tests consecutively |
+| ```npm run build``` | Compiles TypeScript files into JavaScript |
+| ```npm run test``` | Runs TypeScript, ESLint, and unit/integration tests consecutively |
 | ```npm run test:eslint``` | Runs ESLint tests |
-| ```npm run test:typescript``` | Runs Typescript tests |
+| ```npm run test:typescript``` | Runs TypeScript tests |
 | ```npm run test:typescript:watch``` | Runs `npm run test:typescript` in watch mode |
 | ```npm run test:unit``` | Runs unit and integration tests <sup>1</sup> |
 | ```npm run test:unit:coverage``` | Runs `npm run test:unit` and also generates a coverage report <sup>1</sup> |
