@@ -66,9 +66,9 @@ Docker Compose can also be used to more easily manage environment variables.
 
 ## Usage
 
-Once the server is running, it will post messages to a single Discord channel (based on the `DISCORD_CHANNEL_ID` defined in [Installation](#installation)) when:
+Once the server is running, it will post messages to a single Discord channel (`DISCORD_CHANNEL_ID` defined in [Installation](#installation)) when:
 
-* The status of a realm (based on the `REALM_SLUG` defined in [Installation](#installation)) changes
+* The status of a realm (`REALM_SLUG` defined in [Installation](#installation)) changes
   * The server will poll the _World of Warcraft_ API every 5 minutes
   * The server will only post messages when the realm status changes from its previous state (i.e. it won't post the same status multiple times)
 * Daily quests and weekly raids reset
