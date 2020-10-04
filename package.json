@@ -1,7 +1,7 @@
 {
   "name": "discord-bot-wow-status",
   "version": "0.0.0",
-  "description": "Node/Typescript server for a Discord bot relating to World of Warcraft",
+  "description": "Node/TypeScript server for a Discord bot relating to World of Warcraft",
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index",
@@ -88,9 +88,6 @@
     "verbose": true,
     "collectCoverageFrom": [
       "src/**/*.ts"
-    ],
-    "coveragePathIgnorePatterns": [
-      "node_modules"
     ]
   }
 }
