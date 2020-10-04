@@ -16,7 +16,7 @@ This repository contains the source files of a Node server written in TypeScript
 
 Features of the bot include:
 
-* Monitors a realm and posts messages when the status of the realm changes (i.e. online/offline, useful for weekly maintenance)
+* Monitors a realm and posts messages when the status of the realm changes (useful for weekly maintenance)
 * Posts a message when daily quests and weekly raids reset
 
 More features will be added when the APIs relating to features being introduced in _Shadowlands_ are released.
