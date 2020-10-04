@@ -7,17 +7,19 @@ import {
   REALM_STATUS_MESSAGES,
 } from './constants';
 
+const {
+  NODE_ENV,
+  REALM_SLUG,
+} = process.env;
+
 let lastRealmStatus: string | null = null;
 
 /**
  * Handler for posting a realm status message to Discord
- * @param slug Slug of the realm to check the status of
  */
-const postRealmStatus = async (
-  slug: string,
-) => {
-  /* istanbul ignore next */
-  if (process.env.NODE_ENV !== 'test') {
+const postRealmStatus = async () => {
+  /* istanbul ignore if */
+  if (NODE_ENV !== 'test') {
     console.log('Posting realm status message to Discord');
   }
 
@@ -25,7 +27,7 @@ const postRealmStatus = async (
 
   // Get the realm data for the realm name and connected realm ID
   const realm = await fetch(
-    BLIZZARD_REALM_API.replace('{REALM_SLUG}', slug),
+    BLIZZARD_REALM_API.replace('{REALM_SLUG}', String(REALM_SLUG)),
     { headers },
   ).then((response) => response.json());
 

@@ -44,7 +44,7 @@ describe('postRealmStatus', () => {
       },
     );
 
-    await postRealmStatus('test_realm_slug');
+    await postRealmStatus();
 
     const [realm, connectedRealm] = fetchMock.calls();
 
@@ -68,7 +68,7 @@ describe('postRealmStatus', () => {
       },
     );
 
-    await postRealmStatus('test_realm_slug');
+    await postRealmStatus();
 
     const [realm, connectedRealm] = fetchMock.calls();
 
@@ -95,7 +95,7 @@ describe('postRealmStatus', () => {
       },
     );
 
-    await postRealmStatus('test_realm_slug');
+    await postRealmStatus();
 
     expect(postDiscordChannelMessage).toHaveBeenCalledTimes(1);
     expect(postDiscordChannelMessage).toHaveBeenNthCalledWith(1, ':green_circle: test_realm_name is *up*');
@@ -114,7 +114,7 @@ describe('postRealmStatus', () => {
       },
     );
 
-    await postRealmStatus('test_realm_slug');
+    await postRealmStatus();
 
     expect(postDiscordChannelMessage).toHaveBeenCalledTimes(0);
   });
