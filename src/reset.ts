@@ -5,6 +5,10 @@ import {
   RESET_WEEKLY_DAY,
 } from './constants';
 
+const {
+  NODE_ENV,
+} = process.env;
+
 /**
  * Handler for posting a reset message to Discord
  * @param day Current day (as Date number)
@@ -14,7 +18,7 @@ const postResetMessage = (
   day: Number = new Date().getDay(),
 ) => {
   /* istanbul ignore if */
-  if (process.env.NODE_ENV !== 'test') {
+  if (NODE_ENV !== 'test') {
     console.log('Posting reset message to Discord');
   }
 
