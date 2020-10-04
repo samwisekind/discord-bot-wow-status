@@ -90,6 +90,6 @@ Below are the NPM commands that can be used for development:
 | ```npm run test:typescript:watch``` | Runs `npm run test:typescript` in watch mode |
 | ```npm run test:unit``` | Runs unit and integration tests <sup>1</sup> |
 | ```npm run test:unit:coverage``` | Runs `npm run test:unit` and also generates a coverage report <sup>1</sup> |
-| ```npm run test:unit:coverage``` | Runs `npm run test:unit:coverage` in watch mode <sup>1</sup> |
+| ```npm run test:unit:watch``` | Runs `npm run test:unit:coverage` in watch mode <sup>1</sup> |
 
 <sup>1</sup> Can be run without needing to run `npm run build`
