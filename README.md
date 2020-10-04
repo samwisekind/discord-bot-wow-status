@@ -44,7 +44,7 @@ The following environment variables are required when running the server:
 | ```DISCORD_CHANNEL_ID``` | The ID of the Discord channel to post to |
 | ```BLIZZARD_CLIENT_ID``` | The client ID of the [Blizzard API client](https://develop.battle.net/access) |
 | ```BLIZZARD_CLIENT_SECRET``` | The client secret of the [Blizzard API client](https://develop.battle.net/access) |
-| ```REALM_SLUG``` | The slug of the _World of Warcraft_ realm to monitor and post messages about |
+| ```REALM_SLUG``` | The slug of the _World of Warcraft_ realm (US region) to monitor and post messages about |
 
 The server can be built using Docker:
 
