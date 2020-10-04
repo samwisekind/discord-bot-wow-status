@@ -73,6 +73,7 @@ Once the server is running, it will post messages to a single Discord channel (`
 * The status of a realm (`REALM_SLUG` defined in [Installation](#installation)) changes
   * The server will poll the _World of Warcraft_ API every 5 minutes
   * The server will only post a message when the realm status changes from its previous state (i.e. it won't post a message for the same status multiple times)
+  * The realm status is provided in the API from the [connected realm](https://us.battle.net/support/en/article/000014296) data instead of the realm data itself – the server will automatically retrieve the connected realm data from the realm slug
 * Daily quests and weekly raids reset
   * The server will post a message every day when daily quests reset and a message on Tuesday when weekly raids reset, both at a fixed time of 1500 UTC (based on the US reset time)
 
