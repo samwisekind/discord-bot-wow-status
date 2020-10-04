@@ -10,7 +10,7 @@ docker build . -t discord-bot-wow-status
 docker run \
   -e DISCORD_BOT_TOKEN= \
   -e DISCORD_CHANNEL_ID= \
-  -e BLIZZARD_CLIENT_= \
+  -e BLIZZARD_CLIENT_ID= \
   -e BLIZZARD_CLIENT_SECRET= \
   -e REALM_SLUG= \
   -d discord-bot-wow-status

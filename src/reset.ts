@@ -6,8 +6,8 @@ import {
 } from './constants';
 
 /**
- * Reset handler
- * @param {Number} day Current day (as Date number)
+ * Handler for posting reset message to Discord
+ * @param day Current day (as Date number)
  */
 const postResetMessage = (
   /* istanbul ignore next */
@@ -15,7 +15,7 @@ const postResetMessage = (
 ) => {
   /* istanbul ignore next */
   if (process.env.NODE_ENV !== 'test') {
-    console.log('Posting reset message to Discord API');
+    console.log('Posting reset message to Discord');
   }
 
   let message = RESET_MESSAGES.DAILY;

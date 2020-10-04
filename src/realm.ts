@@ -1,5 +1,4 @@
 import getBlizzardAPIToken from './blizzard';
-
 import postDiscordChannelMessage from './discord';
 
 import {
@@ -8,11 +7,20 @@ import {
   REALM_STATUS_MESSAGES,
 } from './constants';
 
-global.fetch = require('node-fetch');
-
 let lastRealmStatus: string | null = null;
 
-const postRealmStatus = async (slug: string) => {
+/**
+ * Handler for posting realm status message to Discord
+ * @param slug Slug of the realm to check the status of
+ */
+const postRealmStatus = async (
+  slug: string,
+) => {
+  /* istanbul ignore next */
+  if (process.env.NODE_ENV !== 'test') {
+    console.log('Posting realm status message to Discord');
+  }
+
   const headers = { Authorization: `Bearer ${await getBlizzardAPIToken()}` };
 
   // Get the realm data for the realm name and connected realm ID
