@@ -1,5 +1,6 @@
 # discord-bot-wow-status
 
+[![Master](https://github.com/Flamov/discord-bot-wow-status/workflows/Master/badge.svg?branch=master)](https://github.com/Flamov/discord-bot-wow-status/actions?query=workflow%3AMaster)
 [![Maintainability](https://api.codeclimate.com/v1/badges/58fe1effd4214cf55de5/maintainability)](https://codeclimate.com/github/Flamov/discord-bot-wow-status/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/58fe1effd4214cf55de5/test_coverage)](https://codeclimate.com/github/Flamov/discord-bot-wow-status/test_coverage)
 [![Issue Count](https://codeclimate.com/github/Flamov/discord-bot-wow-status/badges/issue_count.svg)](https://codeclimate.com/github/Flamov/discord-bot-wow-status)
