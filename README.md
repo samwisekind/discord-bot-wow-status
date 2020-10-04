@@ -7,7 +7,8 @@
 
 1. [Introduction](#introduction)
 2. [Installation](#installation)
-3. [Development](#development)
+3. [Usage](#usage)
+4. [Development](#development)
 
 ## Introduction
 
@@ -15,8 +16,8 @@ This repository contains the source files of a Node server written in TypeScript
 
 Features of the bot include:
 
-* Monitors a realm and posts messages when the status of the realm changes (i.e. when the realm goes down or comes back up, useful for weekly maintenance)
-* Posts a message when daily quests and weekly raids reset (based on US reset time)
+* Monitors a realm and posts messages when the status of the realm changes (i.e. online/offline, useful for weekly maintenance)
+* Posts a message when daily quests and weekly raids reset
 
 More features will be added when the APIs relating to features being introduced in _Shadowlands_ are released.
 
@@ -62,6 +63,16 @@ docker run \
 ```
 
 Docker Compose can also be used to more easily manage environment variables.
+
+## Usage
+
+Once the server is running, it will post messages to a single Discord channel (based on the `DISCORD_CHANNEL_ID` defined in [Installation](#installation)) when:
+
+* The status of a realm (based on the `REALM_SLUG` defined in [Installation](#installation)) changes
+  * The server will poll the _World of Warcraft_ API every 5 minutes
+  * The server will only post messages when the realm status changes from its previous state (i.e. it won't post the same status multiple times)
+* Daily quests and weekly raids reset
+  * The server will post messages at a fixed schedule of 1500 UTC daily (based on the US reset time)
 
 ## Development
 
