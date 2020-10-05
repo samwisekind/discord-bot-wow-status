@@ -34,25 +34,4 @@ jobs:
         CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE_TEST_REPORTER_ID }}
       with:
         coverageCommand: npm run test:unit:coverage
-        coverageLocations: ${{github.workspace}}/coverage/lcov.info:lcov
-
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v1
-      with:
-        username: Flamov
-        password: ${{ secrets.GITHUB_TOKEN }}
-        registry: docker.pkg.github.com
-        repository: flamov/discord-bot-wow-status/discord-bot-wow-status
-        tags: latest
-
-    - name: Deploy test image
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SSH_IP }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script_stop: true
-        script: |
-          echo ${{ secrets.PACKAGES_TOKEN }} | docker login docker.pkg.github.com -u Flamov --password-stdin
-          docker-compose pull bot
-          docker-compose up --no-deps -d bot
+        coverageLocations: ${{ github.workspace }}/coverage/lcov.info:lcov
