@@ -13,16 +13,21 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
     - name: Use Node.js 14
       uses: actions/setup-node@v1
       with:
         node-version: 14
+
     - name: Install dependencies
       run: npm ci --unsafe-perm
+
     - name: Test ESLint
       run: npm run test:eslint
+
     - name: Test TypeScript files
       run: npm run test:typescript
+
     - name: Run unit tests and upload coverage
       uses: paambaati/codeclimate-action@v2.6.0
       env:
@@ -30,3 +35,24 @@ jobs:
       with:
         coverageCommand: npm run test:unit:coverage
         coverageLocations: ${{github.workspace}}/coverage/lcov.info:lcov
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v1
+      with:
+        username: Flamov
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: docker.pkg.github.com
+        repository: flamov/discord-bot-wow-status/discord-bot-wow-status
+        tags: latest
+
+      - name: Deploy test image
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_IP }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script_stop: true
+          script: |
+            echo ${{ secrets.PACKAGES_TOKEN }} | docker login docker.pkg.github.com -u Flamov --password-stdin
+            docker-compose pull bot
+            docker-compose up --no-deps -d bot
