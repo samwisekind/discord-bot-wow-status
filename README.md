@@ -44,7 +44,7 @@ The following environment variables are required when running the server:
 | ```DISCORD_CHANNEL_ID``` | The ID of the Discord channel to post to |
 | ```BLIZZARD_CLIENT_ID``` | The client ID of the [Blizzard API client](https://develop.battle.net/access) |
 | ```BLIZZARD_CLIENT_SECRET``` | The client secret of the [Blizzard API client](https://develop.battle.net/access) |
-| ```REALM_SLUG``` | The slug of the _World of Warcraft_ realm (US region only) to monitor and post messages about |
+| ```REALM_SLUG``` | The slug of the _World of Warcraft_ realm (US region only) to monitor |
 
 The server can be built using Docker:
 
@@ -89,7 +89,7 @@ Below are the NPM commands that can be used for development:
 | ```npm run test:eslint``` | Runs ESLint tests |
 | ```npm run test:typescript``` | Runs TypeScript tests |
 | ```npm run test:typescript:watch``` | Runs `npm run test:typescript` in watch mode |
-| ```npm run test:unit``` | Runs unit and integration tests <sup>1</sup> |
+| ```npm run test:unit``` | Runs unit/integration tests <sup>1</sup> |
 | ```npm run test:unit:coverage``` | Runs `npm run test:unit` and also generates a coverage report <sup>1</sup> |
 | ```npm run test:unit:watch``` | Runs `npm run test:unit:coverage` in watch mode <sup>1</sup> |
 
