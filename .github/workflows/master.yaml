@@ -45,14 +45,14 @@ jobs:
         repository: flamov/discord-bot-wow-status/discord-bot-wow-status
         tags: latest
 
-      - name: Deploy test image
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_IP }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
-          script: |
-            echo ${{ secrets.PACKAGES_TOKEN }} | docker login docker.pkg.github.com -u Flamov --password-stdin
-            docker-compose pull bot
-            docker-compose up --no-deps -d bot
+    - name: Deploy test image
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_IP }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script_stop: true
+        script: |
+          echo ${{ secrets.PACKAGES_TOKEN }} | docker login docker.pkg.github.com -u Flamov --password-stdin
+          docker-compose pull bot
+          docker-compose up --no-deps -d bot
