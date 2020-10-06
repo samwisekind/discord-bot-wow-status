@@ -79,7 +79,7 @@ describe('postRealmStatus', () => {
     expect(connectedRealm[1]).toStrictEqual({ headers: { Authorization: 'Bearer test_blizzard_api_token' } });
 
     expect(postDiscordChannelMessage).toHaveBeenCalledTimes(1);
-    expect(postDiscordChannelMessage).toHaveBeenNthCalledWith(1, ':red_circle: test_realm_name is *down*');
+    expect(postDiscordChannelMessage).toHaveBeenNthCalledWith(1, ':red_circle: test_realm_name is **down**');
   });
 
   it('Posts to Discord when realm status changes after posting for the first time', async () => {
@@ -98,7 +98,7 @@ describe('postRealmStatus', () => {
     await postRealmStatus();
 
     expect(postDiscordChannelMessage).toHaveBeenCalledTimes(1);
-    expect(postDiscordChannelMessage).toHaveBeenNthCalledWith(1, ':green_circle: test_realm_name is *up*');
+    expect(postDiscordChannelMessage).toHaveBeenNthCalledWith(1, ':green_circle: test_realm_name is **up**');
   });
 
   it('Does not post to Discord when realm status is the same', async () => {
