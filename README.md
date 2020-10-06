@@ -12,7 +12,7 @@
 
 ## Introduction
 
-![Image of the Discord bot messages](https://cdn.flamov.com/misc/discord-bot-wow-status-preview.png?v2)
+![Image of the Discord bot messages](https://cdn.flamov.com/misc/discord-bot-wow-status-preview.png?v3)
 
 This repository contains the source files of a Node server written in TypeScript for a Discord bot that automatically posts messages related to _World of Warcraft_. The bot is mostly for private use but it can be installed and used on any Discord server, however it must be hosted manually.
 
@@ -46,13 +46,17 @@ The following environment variables are required when running the server:
 | ```BLIZZARD_CLIENT_SECRET``` | The client secret of the [Blizzard API client](https://develop.battle.net/access) |
 | ```REALM_SLUG``` | The slug of the _World of Warcraft_ realm (US region only) to monitor |
 
-The server can be built using Docker:
+Docker images of the server are published to and can be pulled from the GitHub Packages Registry:
+
+https://github.com/Flamov/discord-bot-wow-status/packages
+
+Alternatively, a Docker image of the server can be built locally by cloning this repository and running:
 
 ```console
 docker build . -t discord-bot-wow-status
 ```
 
-The server can then be run by passing in the required environment variables (in detached mode):
+The server can be run by passing in the required environment variables (in detached mode):
 
 ```console
 docker run \
@@ -64,7 +68,24 @@ docker run \
   -d discord-bot-wow-status
 ```
 
-Docker Compose can also be used to more easily manage environment variables.
+Docker Compose can also be used to more easily manage environment variables, for example:
+
+```yaml
+version: "3"
+
+services:
+  bot:
+    image: docker.pkg.github.com/flamov/discord-bot-wow-status/discord-bot-wow-status:latest
+    restart: unless-stopped
+    environment:
+      - DISCORD_BOT_TOKEN=
+      - DISCORD_CHANNEL_ID=
+      - BLIZZARD_CLIENT_ID=
+      - BLIZZARD_CLIENT_SECRET=
+      - REALM_SLUG=
+```
+
+The server can also be built and run locally without Docker — see [Development](#development) for more details.
 
 ## Usage
 
@@ -83,7 +104,7 @@ Below are the NPM commands that can be used for development:
 
 | Command | Description |
 | --- | --- |
-| ```npm run start``` | Runs the server |
+| ```npm run start``` | Runs the server (`npm run build` should be run before) |
 | ```npm run build``` | Compiles TypeScript files into JavaScript |
 | ```npm run test``` | Runs TypeScript, ESLint, and unit/integration tests consecutively |
 | ```npm run test:eslint``` | Runs ESLint tests |
