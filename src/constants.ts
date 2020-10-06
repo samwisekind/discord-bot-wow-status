@@ -16,8 +16,8 @@ const RESET_WEEKLY_DAY = 2; // Tuesday
 const REALM_STATUS_UP = 'UP';
 
 const REALM_STATUS_MESSAGES = {
-  UP: ':green_circle: {REALM_NAME} is *{REALM_STATUS}*',
-  DOWN: ':red_circle: {REALM_NAME} is *{REALM_STATUS}*',
+  UP: ':green_circle: {REALM_NAME} is **{REALM_STATUS}**',
+  DOWN: ':red_circle: {REALM_NAME} is **{REALM_STATUS}**',
 };
 
 export {
