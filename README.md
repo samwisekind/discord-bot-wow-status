@@ -44,7 +44,7 @@ The following environment variables are required when running the server:
 | ```DISCORD_CHANNEL_ID``` | The ID of the Discord channel to post to |
 | ```BLIZZARD_CLIENT_ID``` | The client ID of the [Blizzard API client](https://develop.battle.net/access) |
 | ```BLIZZARD_CLIENT_SECRET``` | The client secret of the [Blizzard API client](https://develop.battle.net/access) |
-| ```REALM_SLUGS``` | Comma-delimited list of slugs of the _World of Warcraft_ realms (US region only) to monitor, e.g. `frostwolf,moonguard,tichondrius` |
+| ```REALM_SLUGS``` | Comma-delimited list of _World of Warcraft_ realm slugs (US region only) to monitor, e.g. `frostwolf,moonguard,tichondrius` |
 
 Docker images of the server are published to and can be pulled from the GitHub Packages Registry:
 
@@ -91,7 +91,7 @@ The server can also be built and run locally without Docker — see [Development
 
 Once the server is running, it will post messages to a single Discord channel (`DISCORD_CHANNEL_ID` defined in [Installation](#installation)) when:
 
-* The status of a realm (`REALM_SLUGS` defined in [Installation](#installation)) changes
+* The status of a realm (for each in `REALM_SLUGS` defined in [Installation](#installation)) changes
   * The server will poll the _World of Warcraft_ API every 5 minutes
   * The server will only post a message when the realm status changes from its previous state (i.e. it won't post a message for the same status multiple times)
   * The realm status is provided in the API from the [connected realm](https://us.battle.net/support/en/article/000014296) data instead of the realm data itself – the server will automatically retrieve the connected realm data from the realm slug
