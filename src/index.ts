@@ -9,6 +9,10 @@ global.fetch = require('node-fetch');
 
 process.env.TZ = 'UTC';
 
+const {
+  REALM_SLUGS,
+} = process.env;
+
 // Every day at 15:00 UTC
 cron.schedule('0 15 * * *', () => {
   try {
@@ -21,7 +25,7 @@ cron.schedule('0 15 * * *', () => {
 // Every 5 minutes
 cron.schedule('*/5 * * * *', () => {
   try {
-    postRealmStatus();
+    String(REALM_SLUGS).split(',').forEach(postRealmStatus);
   } catch (error) {
     console.error('Unable to post realm status message', error);
   }
