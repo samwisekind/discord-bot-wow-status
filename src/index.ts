@@ -25,7 +25,8 @@ cron.schedule('0 15 * * *', () => {
 // Every 5 minutes
 cron.schedule('*/5 * * * *', () => {
   try {
-    String(REALM_SLUGS || REALM_SLUG).split(',').forEach((slug) => postRealmStatus(slug));
+    String(REALM_SLUGS || /* istanbul ignore next */ REALM_SLUG)
+      .split(',').forEach((slug) => postRealmStatus(slug));
   } catch (error) {
     /* istanbul ignore next */
     console.error('Unable to post realm status message', error);
