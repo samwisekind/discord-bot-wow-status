@@ -11,6 +11,7 @@ process.env.TZ = 'UTC';
 
 const {
   REALM_SLUGS,
+  REALM_SLUG, // Backward compatibility for pre-v1.0.2
 } = process.env;
 
 // Every day at 15:00 UTC
@@ -25,7 +26,7 @@ cron.schedule('0 15 * * *', () => {
 // Every 5 minutes
 cron.schedule('*/5 * * * *', () => {
   try {
-    String(REALM_SLUGS).split(',').forEach(postRealmStatus);
+    String(REALM_SLUGS || REALM_SLUG).split(',').forEach(postRealmStatus);
   } catch (error) {
     console.error('Unable to post realm status message', error);
   }
