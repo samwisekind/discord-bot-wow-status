@@ -9,15 +9,16 @@ import {
 
 const {
   NODE_ENV,
-  REALM_SLUG,
 } = process.env;
 
-let lastRealmStatus: string | null = null;
+const realmStatuses: {
+  [key: string]: string;
+} = {};
 
 /**
  * Handler for posting a realm status message to Discord
  */
-const postRealmStatus = async () => {
+const postRealmStatus = async (slug: string) => {
   /* istanbul ignore if */
   if (NODE_ENV !== 'test') {
     console.log('Posting realm status message to Discord');
@@ -27,7 +28,7 @@ const postRealmStatus = async () => {
 
   // Get the realm data for the realm name and connected realm ID
   const realm = await fetch(
-    BLIZZARD_REALM_API.replace('{REALM_SLUG}', String(REALM_SLUG)),
+    BLIZZARD_REALM_API.replace('{REALM_SLUG}', slug),
     { headers },
   ).then((response) => response.json());
 
@@ -38,8 +39,8 @@ const postRealmStatus = async () => {
   ).then((response) => response.json());
 
   if (
-    lastRealmStatus !== null // Do nothing on the first request
-    && lastRealmStatus !== connectedRealm.status.type
+    realmStatuses[slug] // Do nothing on the first request
+    && realmStatuses[slug] !== connectedRealm.status.type
   ) {
     let message = REALM_STATUS_MESSAGES.UP;
     if (connectedRealm.status.type !== REALM_STATUS_UP) {
@@ -52,7 +53,7 @@ const postRealmStatus = async () => {
     postDiscordChannelMessage(message);
   }
 
-  lastRealmStatus = connectedRealm.status.type;
+  realmStatuses[slug] = connectedRealm.status.type;
 };
 
 export default postRealmStatus;
