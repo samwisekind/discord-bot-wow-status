@@ -1,4 +1,4 @@
-name: Deploy
+name: Build and Deploy
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - v*
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -24,8 +24,11 @@ jobs:
         registry: docker.pkg.github.com
         repository: flamov/discord-bot-wow-status/discord-bot-wow-status
         tags: latest,${{ steps.tag.outputs.tag }}
-
-    - name: Deploy test image
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy image
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.SSH_IP }}
