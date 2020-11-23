@@ -24,6 +24,7 @@ jobs:
         registry: docker.pkg.github.com
         repository: flamov/discord-bot-wow-status/discord-bot-wow-status
         tags: latest,${{ steps.tag.outputs.tag }}
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
