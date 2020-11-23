@@ -18,7 +18,7 @@ This repository contains the source files of a Node server written in TypeScript
 
 Features of the bot include:
 
-* Monitors a realm and posts messages when the status of the realm changes (useful for weekly maintenance)
+* Monitors realms and posts messages when the status of a realm changes (useful for weekly maintenance)
 * Posts a message when daily quests and weekly raids reset
 
 More features will be added when the APIs relating to features being introduced in _Shadowlands_ are released.
@@ -28,7 +28,7 @@ More features will be added when the APIs relating to features being introduced 
 The following is required before installing and using the bot:
 
 * [Discord app bot](https://discord.com/developers/applications)
-* [Blizzard API client](https://develop.battle.net/accesss)
+* [Blizzard API client](https://develop.battle.net/access)
 
 For both the Discord app and Blizzard API client, redirect and service URLs are not required.
 

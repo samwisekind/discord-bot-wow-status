@@ -1,5 +1,3 @@
-/* istanbul ignore file */
-
 import cron from 'node-cron';
 
 import postResetMessage from './reset';
@@ -19,6 +17,7 @@ cron.schedule('0 15 * * *', () => {
   try {
     postResetMessage();
   } catch (error) {
+    /* istanbul ignore next */
     console.error('Unable to post reset message', error);
   }
 });
@@ -26,8 +25,10 @@ cron.schedule('0 15 * * *', () => {
 // Every 5 minutes
 cron.schedule('*/5 * * * *', () => {
   try {
-    String(REALM_SLUGS || REALM_SLUG).split(',').forEach(postRealmStatus);
+    String(REALM_SLUGS || /* istanbul ignore next */ REALM_SLUG)
+      .split(',').forEach((slug) => postRealmStatus(slug));
   } catch (error) {
+    /* istanbul ignore next */
     console.error('Unable to post realm status message', error);
   }
 });

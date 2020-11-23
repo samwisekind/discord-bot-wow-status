@@ -21,7 +21,7 @@ const realmStatuses: {
 const postRealmStatus = async (slug: string) => {
   /* istanbul ignore if */
   if (NODE_ENV !== 'test') {
-    console.log('Posting realm status message to Discord');
+    console.log('Posting realm status message to Discord for:', slug);
   }
 
   const headers = { Authorization: `Bearer ${await getBlizzardAPIToken()}` };
