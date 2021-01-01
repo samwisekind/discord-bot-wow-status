@@ -27,7 +27,7 @@ describe('index', () => {
   it('cron schedules were set up correctly', () => {
     expect(cron.schedule).toHaveBeenCalledTimes(2);
     expect(cron.schedule).toHaveBeenNthCalledWith(1, '0 15 * * *', expect.any(Function));
-    expect(cron.schedule).toHaveBeenNthCalledWith(2, '*/5 * * * *', expect.any(Function));
+    expect(cron.schedule).toHaveBeenNthCalledWith(2, '* * * * *', expect.any(Function));
 
     expect(postResetMessage).toHaveBeenCalledTimes(1);
 
