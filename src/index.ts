@@ -22,8 +22,8 @@ cron.schedule('0 15 * * *', () => {
   }
 });
 
-// Every 5 minutes
-cron.schedule('*/5 * * * *', () => {
+// Every 60 seconds
+cron.schedule('* * * * *', () => {
   try {
     String(REALM_SLUGS || /* istanbul ignore next */ REALM_SLUG)
       .split(',').forEach((slug) => postRealmStatus(slug));
