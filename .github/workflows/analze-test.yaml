@@ -1,15 +1,37 @@
-name: Master
+name: Analyze and Test
 
 on:
   push:
-    branches:
-      - master
+    branches: master
+  pull_request:
   schedule:
     - cron: "0 0 * * *" # Every day at 0000 UTC (midnight)
 
 jobs:
-  master:
+  analyze:
+    name: CodeQL Analysis
+
     runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: javascript
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+
+  test:
+    name: Build and Test
+
+    needs: analyze
+
+    runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -27,6 +49,9 @@ jobs:
 
     - name: Test TypeScript files
       run: npm run test:typescript
+
+    - name: Run unit tests
+      run: npm run test:unit
 
     - name: Run unit tests and upload coverage
       uses: paambaati/codeclimate-action@v2.6.0
