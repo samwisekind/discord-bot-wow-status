@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Push and Deploy
 
 on:
   push:
@@ -7,7 +7,10 @@ on:
 
 jobs:
   build:
+    name: Build and push Docker image
+
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -26,8 +29,12 @@ jobs:
         tags: latest,${{ steps.tag.outputs.tag }}
 
   deploy:
+    name: Deploy Docker image
+
     needs: build
+
     runs-on: ubuntu-latest
+
     steps:
     - name: Deploy image
       uses: appleboy/ssh-action@master

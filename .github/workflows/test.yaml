@@ -1,4 +1,4 @@
-name: Analyze and Test
+name: Test
 
 on:
   push:
@@ -8,27 +8,8 @@ on:
     - cron: "0 0 * * *" # Every day at 0000 UTC (midnight)
 
 jobs:
-  analyze:
-    name: CodeQL Analysis
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
-      with:
-        languages: javascript
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
-
   test:
-    name: Build and Test
-
-    needs: analyze
+    name: Build and test
 
     runs-on: ubuntu-latest
 
