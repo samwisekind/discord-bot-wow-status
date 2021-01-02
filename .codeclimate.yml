@@ -1,2 +1,9 @@
+version: 2
+
 exclude_patterns:
   - '**/*.spec.ts'
+
+checks:
+  similar-code:
+    config:
+      threshold: 50
