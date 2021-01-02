@@ -10,7 +10,7 @@ import {
 const {
   NODE_ENV,
   REALM_SLUGS,
-  REALM_SLUG, // Backward compatibility for pre-v1.0.2
+  REALM_SLUG, // Backwards compatibility for pre-v1.0.2
 } = process.env;
 
 const realmStatuses: {
@@ -18,7 +18,7 @@ const realmStatuses: {
 } = {};
 
 /**
- * Helper for getting realm and connect realm data
+ * Helper for getting realm and connected realm data
  */
 const getRealmData = async (slug: string) => {
   const headers = { Authorization: `Bearer ${await getBlizzardAPIToken()}` };
