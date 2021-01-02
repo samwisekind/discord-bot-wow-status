@@ -30,9 +30,6 @@ describe('index', () => {
     expect(cron.schedule).toHaveBeenNthCalledWith(2, '* * * * *', expect.any(Function));
 
     expect(postResetMessage).toHaveBeenCalledTimes(1);
-
-    expect(postRealmStatus).toHaveBeenCalledTimes(2);
-    expect(postRealmStatus).toHaveBeenNthCalledWith(1, 'test_realm_slug_1');
-    expect(postRealmStatus).toHaveBeenNthCalledWith(2, 'test_realm_slug_2');
+    expect(postRealmStatus).toHaveBeenCalledTimes(1);
   });
 });
