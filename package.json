@@ -1,6 +1,6 @@
 {
   "name": "discord-bot-wow-status",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Node/TypeScript server for a Discord bot relating to World of Warcraft",
   "main": "dist/index.js",
   "scripts": {
